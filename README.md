@@ -1,4 +1,4 @@
-# @capacitor-community/webviewgenie
+# @justrandomnickname/webviewgenie
 
 A Capacitor plugin for opening external URLs in a native WebView with customizable loading animations and navigation tracking.
 Currently working only in IOS environment.
@@ -15,14 +15,14 @@ Android is on the way
 ## Install
 
 ```bash
-npm install @capacitor-community/webviewgenie
+npm install @justrandomnickname/webviewgenie
 npx cap sync
 ```
 
 ## Usage
 
 ```typescript
-import { WebViewGenie } from '@capacitor-community/webviewgenie';
+import { WebViewGenie } from '@justrandomnickname/webviewgenie';
 
 // Basic usage
 await WebViewGenie.open({

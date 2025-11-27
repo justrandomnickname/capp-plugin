@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "CapacitorCommunityWebviewgenie",
+    name: "JustrandomnicknameWebviewgenie",
     platforms: [.iOS(.v14)],
     products: [
         .library(
-            name: "CapacitorCommunityWebviewgenie",
+            name: "JustrandomnicknameWebviewgenie",
             targets: ["webviewgeniePlugin"])
     ],
     dependencies: [
