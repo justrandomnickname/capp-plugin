@@ -1,6 +1,8 @@
 # @capacitor-community/webviewgenie
 
 A Capacitor plugin for opening external URLs in a native WebView with customizable loading animations and navigation tracking.
+Currently working only in IOS environment.
+Android is on the way
 
 ## Features
 
