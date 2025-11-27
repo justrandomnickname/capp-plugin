@@ -26,6 +26,35 @@ export type AnimationTypes =
   | "loadingPulse"
   | 'loadingCircleBlinks';
 
+/**
+ * iOS specific configuration for the WebView.
+ * @since 1.0.0
+ */
+export interface WebViewGenieIOSOptions {
+  /**
+   * The animation type to use for the loading indicator.
+   * See more details at https://github.com/SwiftfulThinking/SwiftfulLoadingIndicators/tree/main
+   * Plugin has been integrated directly by MIT license.
+   * @since 1.0.0
+   */
+  animation?: AnimationTypes;
+  /**
+   * The color of the loading indicator, specified in hex format (e.g., #FF0000 for red).
+   * @since 1.0.0
+   */
+  color?: string;
+  /**
+   * The size of the loading indicator in points.
+   * @since 1.0.0
+   */
+  size?: number;
+  /**
+   * The speed multiplier of the loading indicator animation (1.0 is normal speed).
+   * @since 1.0.0
+   */
+  speed?: number;
+}
+
 export interface WebViewGenieOptions {
   /**
    * The URL to load in the webview. E.g., https://google.com
@@ -33,32 +62,9 @@ export interface WebViewGenieOptions {
   url: string;
   /**
    * iOS specific options. Currently only iOS is supported.
+   * @since 1.0.0
    */
-  ios?: {
-    /**
-     * The animation type to use for the loading indicator.
-     * Supported types are:
-     * see more details at https://github.com/SwiftfulThinking/SwiftfulLoadingIndicators/tree/main
-     * plugin has been integrated directly into the plugin by MIT license.
-     * @since 1.0.0
-     */
-    animation?: AnimationTypes;
-    /**
-     * The color of the loading indicator. specified in hex format (e.g., #FF0000 for red).
-     * @since 1.0.0
-     */
-    color?: string;
-    /**
-     * The size of the loading indicator.
-     * @since 1.0.0
-     */
-    size?: number;
-    /**
-     * The speed of the loading indicator animation.
-     * @since 1.0.0
-     */
-    speed?: number;
-  };
+  ios?: WebViewGenieIOSOptions;
 }
 
 export interface WebViewGeniePlugin {

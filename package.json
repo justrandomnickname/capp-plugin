@@ -1,7 +1,7 @@
 {
   "name": "@capacitor-community/webviewgenie",
   "version": "0.0.1",
-  "description": "Short Description (later)",
+  "description": "A Capacitor plugin for opening external URLs in a native WebView with customizable loading animations and navigation tracking (iOS)",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -11,9 +11,11 @@
     "android/build.gradle",
     "dist/",
     "ios/Sources",
-    "ios/Tests",
     "Package.swift",
-    "CapacitorCommunityWebviewgenie.podspec"
+    "CapacitorCommunityWebviewgenie.podspec",
+    "LICENSE",
+    "CREDITS.md",
+    "README.md"
   ],
   "author": "justrandomnickname",
   "license": "MIT",
@@ -27,7 +29,12 @@
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "webview",
+    "ios",
+    "loading-indicator",
+    "animation",
+    "swiftui"
   ],
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
@@ -39,8 +46,8 @@
     "eslint": "eslint . --ext ts",
     "prettier": "prettier \"**/*.{css,html,ts,js,java}\" --plugin=prettier-plugin-java",
     "swiftlint": "node-swiftlint",
-    "docgen": "docgen --api webviewgeniePlugin --output-readme README.md --output-json dist/docs.json",
-    "build": "npm run clean && tsc && rollup -c rollup.config.mjs",
+    "docgen": "docgen --api WebViewGeniePlugin --output-readme README.md --output-json dist/docs.json",
+    "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.mjs",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build"
@@ -75,6 +82,15 @@
     },
     "android": {
       "src": "android"
+    }
+  },
+  "acknowledgments": {
+    "SwiftfulLoadingIndicators": {
+      "name": "SwiftfulLoadingIndicators",
+      "license": "MIT",
+      "author": "Nick Sarno (@SwiftfulThinking)",
+      "repository": "https://github.com/SwiftfulThinking/SwiftfulLoadingIndicators",
+      "description": "Loading indicators and animations library for SwiftUI. The code has been integrated directly into this plugin under MIT license."
     }
   }
 }
