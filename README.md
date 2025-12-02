@@ -9,6 +9,9 @@ Android is on the way
 - 🚀 Open URLs in a native iOS WebView (full-screen)
 - 🎨 Customizable loading animations (7 different types)
 - 🎯 URL navigation tracking
+- 🧭 Built-in navigation toolbar with Back/Forward buttons
+- ❌ Easy close button with localized labels
+- 🌗 Automatic dark/light theme support
 - 📱 Currently supports iOS only (Android coming soon)
 - 🎭 Beautiful loading indicators powered by [SwiftfulLoadingIndicators](https://github.com/SwiftfulThinking/SwiftfulLoadingIndicators)
 
@@ -18,6 +21,37 @@ Android is on the way
 npm install @justrandomnickname/webviewgenie
 npx cap sync
 ```
+
+## iOS Configuration
+
+### Info.plist Requirements
+
+✅ **Works out of the box for HTTPS URLs** - no additional configuration needed!
+
+⚠️ **For HTTP URLs**, you need to add App Transport Security (ATS) settings to your `ios/App/App/Info.plist`:
+
+```xml
+<key>NSAppTransportSecurity</key>
+<dict>
+    <!-- Option 1: Allow all insecure loads (NOT recommended for production) -->
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+    
+    <!-- Option 2: Allow specific domains only (RECOMMENDED for production) -->
+    <key>NSExceptionDomains</key>
+    <dict>
+        <key>yourdomain.com</key>
+        <dict>
+            <key>NSIncludesSubdomains</key>
+            <true/>
+            <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+            <true/>
+        </dict>
+    </dict>
+</dict>
+```
+
+**Security Best Practice:** For production apps, always use Option 2 with specific domain exceptions instead of allowing all insecure loads.
 
 ## Usage
 
@@ -52,7 +86,19 @@ await WebViewGenie.addListener('navigation', (info) => {
 
 // Close programmatically
 await WebViewGenie.close();
+
+// Remove listener when done
+listener.remove();
 ```
+
+## User Interface
+
+The WebView includes a native toolbar with:
+- **Close button** (localized to device language - "Done"/"Готово"/etc.)
+- **Back button** - Navigate to previous page in WebView history
+- **Forward button** - Navigate to next page in WebView history
+
+The toolbar automatically adapts to the device's light/dark theme.
 
 ## API
 

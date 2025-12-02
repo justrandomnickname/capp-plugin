@@ -1,6 +1,6 @@
 {
   "name": "@justrandomnickname/webviewgenie",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Capacitor plugin for opening external URLs in a native WebView with customizable loading animations and navigation tracking (iOS)",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -46,7 +46,7 @@
     "eslint": "eslint . --ext ts",
     "prettier": "prettier \"**/*.{css,html,ts,js,java}\" --plugin=prettier-plugin-java",
     "swiftlint": "node-swiftlint",
-  "docgen": "npx @capacitor/docgen --api WebViewGeniePlugin --output-readme README.md --output-json dist/docs.json",
+    "docgen": "npx @capacitor/docgen --api WebViewGeniePlugin --output-readme README.md --output-json dist/docs.json",
     "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.mjs",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
